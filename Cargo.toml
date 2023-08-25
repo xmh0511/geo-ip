@@ -2,7 +2,10 @@
 name = "geo-ip"
 version = "0.1.0"
 edition = "2021"
-
+description = "Acquire geography location by IP address"
+license = "MIT"
+homepage = "https://github.com/xmh0511"
+repository = "https://github.com/xmh0511/geo-ip"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
