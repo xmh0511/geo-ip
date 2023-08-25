@@ -1,5 +1,3 @@
-use std::str::FromStr;
-
 use geo_ip;
 use serde_json::Value;
 use serde::Deserialize;
