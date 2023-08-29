@@ -35,4 +35,7 @@ struct Data {
 async fn main() {
     let r = geo_ip::geo_ip::<Data>(None).await.unwrap();
 	println!("{r:#?}");
+
+	let r = geo_ip::geo_ip::<Value>(Some("1.1.1.1".to_owned())).await.unwrap();
+	println!("{r:#?}");
 }
