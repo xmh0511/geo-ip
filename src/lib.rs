@@ -2,6 +2,21 @@ use reqwest::redirect::Policy;
 use reqwest::StatusCode;
 use serde::Deserialize;
 use serde_json::Value;
+/// Specify an argument with form IPv4 address, which is `Option<String>`
+/// > 1. If the argument is None, acquire the information about the IP of the current location
+/// >
+/// > 2. If the argument is String, acquire the information about the specified IP address
+/// 
+/// # Examples
+/// ```
+/// # #[tokio::main]
+/// # async fn main()->anyhow::Result<()> {
+/// #  use serde_json::Value;
+///    let r = geo_ip::geo_ip::<Value>(None).await?;
+///    assert!(r.get("code").unwrap().as_str().unwrap() == "Success");
+/// #   Ok(())
+/// #  }
+/// ```
 pub async fn geo_ip<T: Deserialize<'static>>(ipv4: Option<String>) -> anyhow::Result<T> {
     let client = reqwest::Client::builder()
         .timeout(std::time::Duration::from_secs(10))

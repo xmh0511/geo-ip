@@ -34,5 +34,5 @@ struct Data {
 #[tokio::main]
 async fn main() {
     let r = geo_ip::geo_ip::<Data>(None).await.unwrap();
-    println!("{r:#?}");
+	println!("{r:#?}");
 }
